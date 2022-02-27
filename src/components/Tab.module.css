@@ -1,0 +1,75 @@
+.tab {
+    border: 3px solid #eeeeee;
+    background-color: #fff;
+}
+
+.tabHeader {
+    background-color: #f6f6f6;
+    display: flex;
+    padding: 0 0.75rem;
+    align-items: center;
+}
+
+.tabBody {
+    padding: 1rem;
+    min-height: 250px;
+}
+.tabBody h4 {
+    padding: 1rem ;
+    border: 1px dotted #ccc;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.tabTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+    border-bottom: 2px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    min-width: 20%;
+    max-width: 20%;
+    font-weight: 300;
+    position: relative;
+}
+
+.tabTitle:hover {
+   background-color: #1e90ff29;
+}
+
+.active {
+    border-bottom: 2px solid dodgerblue;
+    border-radius: 2px;
+    color: dodgerblue;
+}
+
+.dTabs {
+    display: flex;
+    flex: 1;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+
+.dTabs::-webkit-scrollbar {
+    display: none;  
+}
+
+.tabTitle:hover .xMark {
+    display: block;
+}
+
+.xMark {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    z-index: 100;
+}
+
+.xMark:hover svg path {
+    fill: red;
+}
