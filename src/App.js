@@ -1,15 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import {Tabs, Tab} from './components/Tab';
-
+  
 function App() {
   return (
     <div className="App">
       <header>
-        <h2>Custom Tab</h2>
+        <h2> React Components Customized</h2>
       </header>
 
       <main>
+        <section >
+          <h2 style={{margin: '1rem 0'}}>Tabs</h2> 
         <Tabs>
             <Tab title= "Tab1">
               Tab1 content
@@ -21,6 +22,7 @@ function App() {
               Tab3 content
             </Tab>
         </Tabs>
+        </section>
       </main>
     </div>
   );
