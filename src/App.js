@@ -11,7 +11,7 @@ function App() {
       <main>
         <section >
           <h2 style={{margin: '1rem 0'}}>Tabs</h2> 
-        <Tabs>
+        <Tabs list={[{title: "From list prop", children: "Some content "}]}>
             <Tab title= "Tab1">
               Tab1 content
             </Tab>

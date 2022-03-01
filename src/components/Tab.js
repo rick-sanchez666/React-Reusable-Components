@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import classes from './Tab.module.css';
+import { PropTypes } from 'prop-types'; 
 
 
 const Xmark = (props) => {
@@ -75,16 +76,31 @@ export const Tabs  = (props) => {
 
 
     useEffect( () => {
-       let tabs =  props.children.map( item => {
-            return item.props
-        })
-        setState(tabs);
+        initializeState();
     }, [props.children]);
+
+    useEffect( () => {
+        initializeState();
+    }, [props.list])
 
     useEffect( () => {
         let el = tabsContainer.current;
         rightScrollCalc(el)
     }, [state.length])
+
+
+    const getMappedChildren = () => {
+       return props.children.map( item => {
+            return item.props
+        })
+    }
+
+    const initializeState = () => {
+        let statictabs =  getMappedChildren();
+        let tabsFromList = [...props.list] || [];
+ 
+         setState([...statictabs, ...tabsFromList]);
+    }
 
     const onTabSelection = (e) => {
         const selectedTab = state.filter( t => t === e);
@@ -180,3 +196,10 @@ export const Tabs  = (props) => {
 }
 
 
+Tab.propTypes = {
+    title: PropTypes.string
+}
+
+Tab.propTypes = {
+    list: PropTypes.array
+}
